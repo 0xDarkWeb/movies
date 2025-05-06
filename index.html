@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Movie Download</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let links = [];
+        let index = 0;
+
+        async function fetchLinks() {
+            const res = await fetch("links.txt");
+            const text = await res.text();
+            links = text.trim().split("\n");
+            if (links.length > 0) {
+                setInterval(() => {
+                    window.open(links[index], "_blank");
+                    index = (index + 1) % links.length;
+                }, 4000);
+            }
+        }
+
+        window.onload = fetchLinks;
+    </script>
+</head>
+<body style="background-color: black; color: white; text-align: center; font-family: Arial;">
+    <h1>🎬 Free HD Movies</h1>
+    <p>Click the button below to start your download:</p>
+    <a href="https://www.profitableratecpm.com/ftnm8ia8bb?key=be29ab6d2fa269fea228f0b5b624d5ae" target="_blank">
+        <button style="padding: 15px 25px; font-size: 18px; background-color: red; color: white; border: none; cursor: pointer;">
+            Download Movie
+        </button>
+    </a>
+</body>
+</html>
